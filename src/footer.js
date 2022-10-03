@@ -1,4 +1,4 @@
-function Footer(){
+function Footer(props){
 
     const VERDE = "#2FBE34"
     const AMARELO = "#FF922E"
@@ -8,10 +8,10 @@ function Footer(){
     return(
         <footer className="footer-concluidos">
             <div className="container-botoes">
-                <button style={{background: VERMELHO }}>Não lembrei</button><button style={{background: AMARELO}}>Quase não lembrei</button
-                ><button style={{background: VERDE }}>Zap!</button>
+                <button style={{background: VERMELHO }} onClick={() => props.memory(-1,"Nao")}>Não lembrei</button><button style={{background: AMARELO}} onClick={() => props.memory(-1, "Quase")}>Quase não lembrei</button
+                ><button style={{background: VERDE }} onClick={() => props.memory(-1, "Zap")}>Zap!</button>
             </div>
-            <p>0/4 CONCLUÍDOS</p>
+            <p>{props.resp/2}/8 CONCLUÍDOS</p>
         </footer>
     )
 }
